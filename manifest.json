@@ -5,13 +5,13 @@
     "description": "Inject a button to hide/unhide tags on a code forces website",
     "permissions": ["activeTab", "scripting"],
     "host_permissions": [
-      "https://www.codeforces.com/*"
+      "https://codeforces.com/*/problem/*"
     ],
     "content_scripts": [
       {
-        "matches": ["https://www.codeforces.com/*"],
+        "matches": ["https://codeforces.com/*/problem/*"],
         "js": ["contentScript.js"]
       }
     ]
-  }
+}
   
