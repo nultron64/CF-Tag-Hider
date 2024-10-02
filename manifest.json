@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "CF Tag Hider",
+    "version": "1.0",
+    "description": "Inject a button to hide/unhide tags on a code forces website",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": [
+      "https://www.codeforces.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://www.codeforces.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
+  
