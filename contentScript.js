@@ -1,7 +1,20 @@
 function injectHideButton() {
     let all_blocks = document.getElementsByClassName("roundbox sidebox borderTopRound");
 
-    let tar_blk = all_blocks[4]; // target block - "Problem tags" block
+    let tar_blk = null; // target block - "Problem tags" block
+
+    for (block of all_blocks) {
+        if (block.innerHTML.includes("Problem tags")) {
+            tar_blk = block;
+            break;
+        }
+    }
+
+    // return if "Problem tags block doesn't exist"
+    if (!tar_blk) {
+        console.log("CF-Tag-Hider: Problem tags block not found!");
+        return;
+    }
 
     // tags are hidden by default
 
