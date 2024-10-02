@@ -30,7 +30,9 @@ function injectHideButton() {
     hideBtn.style.position = "absolute";
 
     hideBtn.style.top = "3px";
-    hideBtn.style.right = "20px";
+    hideBtn.style.right = "15px";
+    hideBtn.style.border = "1px solid black";
+    hideBtn.style.borderRadius = "5px";
 
     // tags are hidden by default
     tarBlk.children[1].style.visibility = "hidden";
