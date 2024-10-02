@@ -4,7 +4,7 @@ function injectHideButton() {
     let tar_blk = null; // target block - "Problem tags" block
 
     for (block of all_blocks) {
-        if (block.innerHTML.includes("Problem tags")) {
+        if (block.innerText.includes("→ Problem tags")) {
             tar_blk = block;
             break;
         }
