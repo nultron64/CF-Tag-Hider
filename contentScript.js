@@ -1,52 +1,52 @@
 function injectHideButton() {
-    let all_blocks = document.getElementsByClassName("roundbox sidebox borderTopRound");
+    let allBlocks = document.getElementsByClassName("roundbox sidebox borderTopRound");
 
-    let tar_blk = null; // target block - "Problem tags" block
+    let tarBlk = null; // target block - "Problem tags" block
 
-    for (block of all_blocks) {
+    for (block of allBlocks) {
         if (block.innerText.includes("→ Problem tags")) {
-            tar_blk = block;
+            tarBlk = block;
             break;
         }
     }
 
     // return if "Problem tags block doesn't exist"
-    if (!tar_blk) {
+    if (!tarBlk) {
         console.log("CF-Tag-Hider: Problem tags block not found!");
         return;
     }
 
     // tags are hidden by default
 
-    // create button
-    var btn_new = document.createElement("button")
-    btn_new.innerText = "Show"
-    btn_new.id = "tags-hide-btn"
-    btn_new.className = "hide-btn"
+    // create the hide button
+    var hideBtn = document.createElement("button")
+    hideBtn.innerText = "Show"
+    hideBtn.id = "tags-hide-btn"
+    hideBtn.className = "hide-btn"
     // ----
 
     // change target block position to relative
-    tar_blk.style.position = "relative";
-    btn_new.style.position = "absolute";
+    tarBlk.style.position = "relative";
+    hideBtn.style.position = "absolute";
 
-    btn_new.style.top = "3px";
-    btn_new.style.right = "20px";
+    hideBtn.style.top = "3px";
+    hideBtn.style.right = "20px";
 
     // tags are hidden by default
-    tar_blk.children[1].style.visibility = "hidden";
+    tarBlk.children[1].style.visibility = "hidden";
 
-    btn_new.onclick = ()=>{
-        if (btn_new.innerHTML=="Hide") {
-            tar_blk.children[1].style.visibility = "hidden";
-            btn_new.innerHTML="Show";
+    hideBtn.onclick = ()=>{
+        if (hideBtn.innerHTML=="Hide") {
+            tarBlk.children[1].style.visibility = "hidden";
+            hideBtn.innerHTML="Show";
         }
         else {
-            tar_blk.children[1].style.visibility = "visible";
-            btn_new.innerHTML="Hide";
+            tarBlk.children[1].style.visibility = "visible";
+            hideBtn.innerHTML="Hide";
         }
     }
 
-    tar_blk.appendChild(btn_new);
+    tarBlk.appendChild(hideBtn);
 }
 
 // Ensure the script runs after the page loads
