@@ -30,7 +30,7 @@ function injectHideButton() {
     hideBtn.style.position = "absolute";
 
     hideBtn.style.top = "3px";
-    hideBtn.style.right = "15px";
+    hideBtn.style.right = "5px";
     hideBtn.style.border = "1px solid black";
     hideBtn.style.borderRadius = "5px";
 
